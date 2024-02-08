@@ -1,0 +1,79 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    /* Add your custom styles here */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .vertical-line {
+        border-left: 2px solid #333; /* Adjust the color and width as needed */
+    }
+
+    .container {
+        max-width: 1200px; /* Adjust the max-width of the container */
+        margin: 0 auto;
+    }
+
+    .centered-header {
+        text-align: center;
+    }
+
+    .left-aligned-text {
+        text-align: left;
+    }
+
+    .larger-text {
+        font-size: 1.2em; /* Adjust the font size as needed */
+    }
+
+    .left-aligned-image {
+        max-width: 100%; /* Ensure the image fits the width of its container */
+        display: block; /* Make sure the image is treated as a block element */
+        margin-left: 0; /* Reset any default margin that may be applied */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <!-- About Lacrosse Section -->
+        <div class="col-md-6 left-aligned-text">
+            <div class="text-center">
+                <h1 class="display-4 centered-header">
+                    About <br /> Lacrosse:
+                </h1>
+                <p class="larger-text left-aligned-text">
+                    Lacrosse is a dynamic and fast-paced sport with a rich history that dates back centuries. Originating from Native American tribes, particularly the Iroquois, lacrosse was traditionally known as the "Creator's Game" and played for various purposes, including the resolution of conflicts, training warriors, and spiritual rituals. Today, lacrosse has evolved into a widely popular sport, played at various levels ranging from youth leagues to professional competitions.
+                </p>
+                <p class="larger-text left-aligned-text">
+                    The game of lacrosse involves two teams, each with ten players, including a goalkeeper. Players use a stick, known as a crosse, with a mesh or netted head to carry, pass, and shoot a small rubber ball into the opponent's goal. The primary objective is to score goals by propelling the ball into the opposing team's net using the crosse. The sport combines elements of soccer, basketball, and hockey, making it an exciting and versatile game that requires speed, agility, and strategic thinking.
+                </p>
+                <img src="~/lax photo 1.jpg" style="max-width: 100%; display: block; margin-left: 0; width: 200%;" alt="Lacrosse Photo 1" />
+            </div>
+        </div>
+
+        <!-- Fun Facts Section -->
+        <div class="col-md-6 left-aligned-text">
+            <div class="text-center">
+                <h1 class="display-4 centered-header">Fun Facts about Lacrosse:</h1>
+                <ul class="left-aligned-text larger-text">
+                    <li>Lacrosse is one of the oldest sports in North America, with roots dating back to indigenous peoples.</li>
+                    <li>The modern version of lacrosse originated in the 19th century and has Native American, Canadian, and European influences.</li>
+                    <li>It is the fastest-growing sport in the United States, played at various levels from youth to professional leagues.</li>
+                    <li>Lacrosse is often referred to as the "fastest game on two feet" due to its high pace and dynamic nature.</li>
+                    <li>The game involves using a small rubber ball and a long-handled stick with a netted pocket to score goals.</li>
+                    <li>Men's and women's lacrosse have different rules and equipment, with women's lacrosse generally being less physically intense.</li>
+                    <li>The traditional Native American version of lacrosse was played as a means of training for war and was considered a spiritual and healing activity.</li>
+                    <li>John Hopkins University in Baltimore is known for its historic lacrosse program and has a significant impact on the sport's development.</li>
+                    <li>The Lacrosse Hall of Fame is located in the United States and honors individuals who have made significant contributions to the sport.</li>
+                    <li>Many lacrosse enthusiasts celebrate May 1st as "Lacrosse Day" to commemorate the sport's history and culture.</li>
+                </ul>
+                <img src="~/lax photo 2.jpg" style="max-width: 100%; display: block; margin-left: 0; width: 200%;" alt="Lacrosse Photo 2" />
+            </div>
+        </div>
+    </div>
+</div>

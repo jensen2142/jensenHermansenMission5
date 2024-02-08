@@ -1,0 +1,100 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Training";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+
+    <h1>@ViewData["Title"]</h1>
+
+    <p style="font-weight: bold; font-style: italic">Please note that different training types have different costs. Upon submittal you will receive a breakdown of hourly cost.</p>
+
+    <label for="trainingType">What do you want training on?</label>
+    <select id="trainingType" name="trainingType">
+        <option value="0">choose an option</option>
+        <option value="1">Short Stick Midfield</option>
+        <option value="1.5">Long Stick Midfield</option>
+        <option value="1">Face off only</option>
+        <option value="1">Attack</option>
+        <option value="2">Defender</option>
+        <option value="1">Goalie</option>
+    </select>
+    <br />
+    <br />
+
+    <label for="trainingFrequency">How many days a week would you like to train?</label>
+    <select id="trainingFrequency" name="trainingFrequency">
+        <option value="0">choose an option</option>
+        <option value="1">One Day</option>
+        <option value="2">Two Days</option>
+        <option value="3">Three Days</option>
+        <option value="4">Four Days</option>
+    </select>
+    <br />
+    <br />
+
+    <label for="trainingLength">How long of sessions would you like?</label>
+    <select id="trainingLength" name="trainingLength">
+        <option value="0">choose an option</option>
+        <option value=".25">15 Minutes</option>
+        <option value=".50">30 Minutes</option>
+        <option value="1">1 Hour</option>
+        <option value="1.5">1 Hour and a half</option>
+    </select>
+    <br />
+    <br />
+
+    <label for="trainingPeriod">How many weeks would you like to train for?</label>
+    <select id="trainingPeriod" name="trainingPeriod">
+        <option value="0">choose an option</option>
+        <option value="1">1 week</option>
+        <option value="2">2 weeks</option>
+        <option value="3">3 weeks</option>
+        <option value="4">4 weeks</option>
+        <option value="5">5 weeks</option>
+        <option value="6">6 weeks</option>
+        <option value="7">7 weeks</option>
+        <option value="8">8 weeks</option>
+    </select>
+    <br />
+    <br />
+
+    <button onclick="calculateCost()">Submit</button>
+    <br />
+    <br />
+    <p id="calculatedCost"></p>
+    <br />
+    <br />
+    <p id="costPerHour"></p>
+
+    <script>
+        function calculateCost() {
+            var trainingType = parseFloat(document.getElementById("trainingType").value);
+            var trainingFrequency = parseFloat(document.getElementById("trainingFrequency").value);
+            var trainingLength = parseFloat(document.getElementById("trainingLength").value);
+            var trainingPeriod = parseFloat(document.getElementById("trainingPeriod").value);
+
+            // Check if any dropdown has "choose an option" selected
+            if (trainingType === 0 || trainingFrequency === 0 || trainingLength === 0 || trainingPeriod === 0) {
+                alert("Please choose an option for all dropdowns before calculating the cost.");
+                return; // Exit the function without proceeding to calculations
+            }
+
+            var totalHours = trainingType * trainingFrequency * trainingLength * trainingPeriod;
+            var totalCost = trainingType * trainingFrequency * trainingLength * trainingPeriod * 25;
+            var costPHour = totalCost / totalHours;
+
+            document.getElementById("calculatedCost").innerText = `Total Cost: $${totalCost.toFixed(2)}`;
+            document.getElementById("costPerHour").innerHTML = 'Cost per hour: $' + costPHour.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
